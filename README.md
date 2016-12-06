@@ -18,3 +18,8 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 ```
 
 `npm start` starts server at http://localhost:3000/ . 
+
+###Based on###
+
+ A highly scalable, offline-first foundation with the best developer experience and a focus on performance and best practices. 
+ http://reactboilerplate.com
