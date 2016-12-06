@@ -17,4 +17,4 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 	> npm start
 ```
 
-`npm start` starts server at http://localhost:8080/ . 
+`npm start` starts server at http://localhost:3000/ . 
