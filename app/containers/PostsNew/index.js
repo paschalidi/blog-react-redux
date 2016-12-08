@@ -16,7 +16,7 @@ export class LoginPage extends React.PureComponent { // eslint-disable-line reac
   };
 
   onSubmit(data) {
-    return this.props.createPost(data).payload
+    return this.props.createPost(data)
       .then(() => {
           alert('New article has succesfully adeed!');
           this.context.router.push('/');

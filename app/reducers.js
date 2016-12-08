@@ -7,7 +7,8 @@ import { combineReducers } from 'redux-immutable';
 import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
-import PostsReducer from 'containers/PostsIndex/reducer'
+import postsIndexReducer from 'containers/PostsIndex/reducer'
+import postsShowReducer from 'containers/PostsShow/reducer'
 import { reducer as reduxFormReducer } from 'redux-form/immutable'
 
 
@@ -45,10 +46,12 @@ function routeReducer(state = routeInitialState, action) {
 export default function createReducer(asyncReducers) {
   return combineReducers({
     route: routeReducer,
-    posts: PostsReducer,
     language: languageProviderReducer,
-    form: reduxFormReducer,
     ...asyncReducers,
+
+    form: reduxFormReducer,
+    posts: postsIndexReducer,
+    post: postsShowReducer,
   });
 }
 

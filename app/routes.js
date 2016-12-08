@@ -70,6 +70,24 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/posts/:id',
+      name: 'postsShow',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/PostsShow/reducer'),
+          System.import('containers/PostsShow'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, component]) => {
+          injectReducer('postsShow', reducer.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
